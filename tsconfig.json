@@ -15,6 +15,20 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_app.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/tinymce/initFullProps.js",
+    "components/tinymce/editor.ts",
+    "components/editor/editor.js",
+    "components/editor/contentEditor.tsxx",
+    "components/editor/contentEditor.tsxx",
+    "components/editor/markButton.js",
+    "components/ui/toolbarComponents.js",
+    "components/editor/customPlaceholder.js",
+    "components/ui/rightHalf.js",
+    "components/editor/blockButton.js"
+  ],
   "exclude": ["node_modules"]
 }

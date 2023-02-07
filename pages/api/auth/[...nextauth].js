@@ -46,7 +46,8 @@ export default NextAuth({
   },
 
   pages: {
-    signIn: "/auth/signup",
+    newUser: "/auth/signup",
+    signIn: "/auth/signin",
   },
   adapter: MongoDBAdapter(clientPromise),
 });

@@ -89,37 +89,47 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          {session != {} && status != "authenticated" ? (
-            <>
-              <Link
-                className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200"
-                href={{
-                  pathname: "/signin",
-                }}
-              >
-                Sign In
-              </Link>
-              <Link
-                className="hidden lg:inline-block py-2 px-6 bg-[#B70808] bg-opacity-80 hover:bg-[#B70808] bg-opacity-80:132
+          <div>
+            {session != {} && status != "authenticated" ? (
+              <>
+                <Link
+                  className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200"
+                  href={{
+                    pathname: "/auth/signin",
+                  }}
+                >
+                  Sign In
+                </Link>
+                <Link
+                  className="hidden lg:inline-block py-2 px-6 bg-[#B70808] bg-opacity-80 hover:bg-[#B70808] bg-opacity-80:132
     text-sm text-white font-bold rounded-xl transition duration-200"
-                href={{
-                  pathname: "auth/signup",
-                }}
-              >
-                Sign up
-              </Link>
-            </>
-          ) : (
-            <>
-              <button
-                className="hidden lg:inline-block py-2 px-6 bg-[#B70808] bg-opacity-80 hover:bg-[#B70808] bg-opacity-80:132
-           text-sm text-white font-bold rounded-xl transition duration-200"
-                onClick={logoutHandler}
-              >
-                Sign Out
-              </button>
-            </>
-          )}
+                  href={{
+                    pathname: "/auth/signup",
+                  }}
+                >
+                  Sign up
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200"
+                  href={{
+                    pathname: "/create",
+                  }}
+                >
+                  Create
+                </Link>
+                <button
+                  className="hidden lg:inline-block py-2 px-6 bg-[#B70808] bg-opacity-80 hover:bg-[#B70808] bg-opacity-80:132
+                text-sm text-white font-bold rounded-xl transition duration-200"
+                  onClick={logoutHandler}
+                >
+                  Sign Out
+                </button>
+              </>
+            )}
+          </div>
         </nav>
       </div>
     </div>
