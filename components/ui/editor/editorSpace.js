@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import { QuillToolbar, Modules, Formats } from "./quillToolbar";
 import "react-quill/dist/quill.snow.css";
+import { useSession } from "next-auth/react";
 
 const QuillNoSSRWrapper = dynamic(import("react-quill"), {
   ssr: false,
@@ -9,6 +10,7 @@ const QuillNoSSRWrapper = dynamic(import("react-quill"), {
 });
 
 const EditorSpace = () => {
+  const { data: session } = useSession();
   const [contentState, setContentState] = useState({ value: null });
   const [loading, setLoading] = useState(false);
   const handleChange = (value) => {
@@ -18,11 +20,12 @@ const EditorSpace = () => {
   const handleSave = async (event) => {
     event.preventDefault();
     let { value } = contentState;
+    let username = session.user.email;
     try {
       const response = await fetch("/api/create", {
         method: "POST",
         body: JSON.stringify({
-          username: "test",
+          username: username,
           blog: value,
         }),
         headers: {
@@ -56,5 +59,4 @@ const EditorSpace = () => {
     </div>
   );
 };
-
 export default EditorSpace;
