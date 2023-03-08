@@ -1,20 +1,20 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
-const userSchema = new Schema({
-  email: {
+const blogSchema = new Schema({
+  username: {
     type: String,
     required: true,
     unique: true,
   },
-  password: {
+  blog: {
     type: String,
     required: true,
-    select: false,
+    unique: true,
   },
   createdAt: { type: Date, default: Date.now },
 });
 
-const User =
-  mongoose.models.users_collection ||
-  mongoose.model("users_collection", userSchema);
-export default User;
+const Blog =
+  mongoose.models.blogs_collection ||
+  mongoose.model("blogs_collection", blogSchema);
+export default Blog;

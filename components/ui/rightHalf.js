@@ -1,11 +1,6 @@
-import CustomPlaceholder from "../editor/customPlaceholder";
-import Toolbar from "../editor/markButton";
+import EditorSpace from "./editor/editorSpace";
 const RightHalf = (props) => {
-  return (
-    <div>
-      <CustomPlaceholder />
-    </div>
-  );
+  return <div>{<EditorSpace />}</div>;
 };
 
 export default RightHalf;

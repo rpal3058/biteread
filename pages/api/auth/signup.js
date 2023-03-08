@@ -2,7 +2,7 @@ import EncryptPassword from "../../../lib/encrypt";
 import dbConnect from "../../../lib/db";
 import User from "../../../lib/models/user_model";
 
-export default async function handler(req: any, res: any) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     return;
   }
@@ -34,7 +34,7 @@ export default async function handler(req: any, res: any) {
       });
       await user.save();
       return res.status(201).json({ message: "Created user!" });
-    } catch (error: any) {
+    } catch (error) {
       return res.status(400).json({ message: error.message });
     }
   }

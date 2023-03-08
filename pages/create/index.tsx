@@ -7,7 +7,7 @@ import RightHalf from "../../components/ui/rightHalf";
 const Create = () => {
   return (
     <Fragment>
-      <div className="h-screen grid grid-cols-2 flex-wrap">
+      <div className="h-screen overflow-hidden grid grid-cols-2 flex-wrap">
         <div className="col-span-1 bg-[#B70808] bg-opacity-80">
           <Header header={"BLOG DETAILS"} />
           <LeftHalf content={"Provide all the details of the blog"} />

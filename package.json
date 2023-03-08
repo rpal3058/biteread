@@ -6,26 +6,20 @@
     "start": "next start"
   },
   "dependencies": {
-    "@emotion/css": "^11.10.5",
-    "@fortawesome/free-solid-svg-icons": "^6.2.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "@next-auth/mongodb-adapter": "^1.1.1",
+    "@sanity/client": "^5.2.2",
     "axios": "^1.2.2",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.3",
-    "emotion": "^11.0.0",
-    "is-hotkey": "^0.2.0",
+    "image-extensions": "^1.1.0",
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.3",
     "next": "latest",
     "next-auth": "^4.18.9",
+    "quill-image-resize-module-react": "^3.0.0",
     "react": "^18.2.0",
-    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.7.1",
-    "slate": "^0.88.1",
-    "slate-history": "^0.86.0",
-    "slate-react": "^0.89.0"
+    "react-quill": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "18.11.3",

@@ -24,11 +24,14 @@
     "components/editor/editor.js",
     "components/editor/contentEditor.tsxx",
     "components/editor/contentEditor.tsxx",
-    "components/editor/markButton.js",
+    "components/editor/button.js",
     "components/ui/toolbarComponents.js",
     "components/editor/customPlaceholder.js",
     "components/ui/rightHalf.js",
-    "components/editor/blockButton.js"
+    "components/editor/blockButton.js",
+    "components/editor/customEditor.js",
+    "components/editor/customEditor.js",
+    "pages/api/auth/signup.js"
   ],
   "exclude": ["node_modules"]
 }
