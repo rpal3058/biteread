@@ -3,8 +3,8 @@ import Blog from "../../lib/models/blog_model";
 import { getSession } from "next-auth/react";
 
 export default async function handler(req, res) {
-  const session = await getSession({ req: context.req });
-  console.log(session);
+  // const session = await getSession({ req: context.req });
+  // console.log(session);
   if (req.method !== "POST") {
     return;
   }
