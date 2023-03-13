@@ -11,6 +11,8 @@ export const Modules = {
 export const QuillToolbar = () => (
   <div id="Toolbar">
     <span className="ql-formats">
+      <button className="ql-header" value="1" />
+      <button className="ql-header" value="2" />
       <button className="ql-bold" />
       <button className="ql-italic" />
       <button className="ql-underline" />
@@ -25,6 +27,7 @@ export const QuillToolbar = () => (
  * See https://quilljs.com/docs/formats/
  */
 export const Formats = [
+  "header",
   "bold",
   "italic",
   "underline",
