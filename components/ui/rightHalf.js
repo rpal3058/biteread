@@ -1,6 +1,11 @@
-import EditorSpace from "./editor/editorSpace";
+import React from "react";
 const RightHalf = (props) => {
-  return <div>{<EditorSpace />}</div>;
+  const { displayType } = props;
+  return (
+    <div>
+      {displayType == "editor" ? <props.display /> : <div>{props.display}</div>}
+    </div>
+  );
 };
 
 export default RightHalf;

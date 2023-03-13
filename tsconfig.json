@@ -31,7 +31,8 @@
     "components/editor/blockButton.js",
     "components/editor/customEditor.js",
     "components/editor/customEditor.js",
-    "pages/api/auth/signup.js"
+    "pages/api/auth/signup.js",
+    "pages/blogs/[id]"
   ],
   "exclude": ["node_modules"]
 }

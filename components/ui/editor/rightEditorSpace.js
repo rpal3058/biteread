@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
-import { QuillToolbar, Modules, Formats } from "./quillToolbar";
+import { QuillToolbar, Modules, Formats } from "./rightQuillToolbar";
 import "react-quill/dist/quill.snow.css";
 import { useSession } from "next-auth/react";
+import { v4 as uuidv4 } from "uuid";
 
 const QuillNoSSRWrapper = dynamic(import("react-quill"), {
   ssr: false,
@@ -12,19 +13,20 @@ const QuillNoSSRWrapper = dynamic(import("react-quill"), {
 const EditorSpace = () => {
   const { data: session } = useSession();
   const [contentState, setContentState] = useState({ value: null });
-  const [loading, setLoading] = useState(false);
   const handleChange = (value) => {
     setContentState({ value });
   };
 
   const handleSave = async (event) => {
     event.preventDefault();
+    const blogId = uuidv4().substr(0, 8);
     let { value } = contentState;
     let username = session.user.email;
     try {
       const response = await fetch("/api/create", {
         method: "POST",
         body: JSON.stringify({
+          blogId: blogId,
           username: username,
           blog: value,
         }),
@@ -32,9 +34,11 @@ const EditorSpace = () => {
           "Content-Type": "application/json",
         },
       });
+      if (!response.ok) {
+        throw new Error("Error response from server");
+      }
     } catch (error) {
-      console.log(error);
-      setStatus(error);
+      console.error(error);
     }
   };
 

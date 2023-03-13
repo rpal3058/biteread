@@ -14,15 +14,8 @@ export const QuillToolbar = () => (
       <button className="ql-bold" />
       <button className="ql-italic" />
       <button className="ql-underline" />
-      <button className="ql-strike" />
-      <button className="ql-list" value="ordered" />
-      <button className="ql-list" value="bullet" />
-      <button className="ql-indent" value="-1" />
-      <button className="ql-indent" value="+1" />
-      <button className="ql-link" />
       <button className="ql-image" />
       <button className="ql-video" />
-      <button className="ql-code-block" />
       <button className="ql-clean" />
     </span>
   </div>
@@ -35,14 +28,7 @@ export const Formats = [
   "bold",
   "italic",
   "underline",
-  "strike",
-  "list",
-  "bullet",
-  "indent",
-  "indent",
-  "link",
   "image",
   "video",
-  "code-block",
   "clean",
 ];

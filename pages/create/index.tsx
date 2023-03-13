@@ -1,9 +1,10 @@
 import React from "react";
 import { getSession } from "next-auth/react";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import Header from "../../components/ui/header";
 import LeftHalf from "../../components/ui/leftHalf";
 import RightHalf from "../../components/ui/rightHalf";
+import EditorSpace from "../../components/ui/editor/rightEditorSpace";
 const Create = () => {
   return (
     <Fragment>
@@ -13,7 +14,7 @@ const Create = () => {
           <LeftHalf content={"Provide all the details of the blog"} />
         </div>
         <div className="col-span-1 bg-whites">
-          <RightHalf />
+          <RightHalf displayType={"editor"} display={EditorSpace} />
         </div>
       </div>
     </Fragment>

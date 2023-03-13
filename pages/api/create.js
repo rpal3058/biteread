@@ -7,9 +7,10 @@ export default async function handler(req, res) {
   }
   await dbConnect();
   const data = req.body;
-  const { username, blog } = data;
+  const { blogId, username, blog } = data;
   try {
     const newBlog = new Blog({
+      blogId: blogId,
       username: username,
       blog: blog,
     });
