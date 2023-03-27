@@ -8,7 +8,7 @@ import clientPromise from "../../../lib/mongodb";
 import dbConnect from "../../../lib/db";
 import User from "../../../lib/models/user_model";
 import { verifyPassword } from "../../../lib/encrypt";
-
+console.log(process.env.GOOGLE_CLIENT_ID);
 export default NextAuth({
   // Configuring of all the  providers
   providers: [

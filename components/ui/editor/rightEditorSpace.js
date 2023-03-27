@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import { QuillToolbar, Modules, Formats } from "./rightQuillToolbar";
 import "react-quill/dist/quill.snow.css";
@@ -9,12 +9,21 @@ const QuillNoSSRWrapper = dynamic(import("react-quill"), {
   ssr: false,
   loading: () => <p>Loading ...</p>,
 });
-
+const MAX_LENGTH = 10;
 const EditorSpace = () => {
   const { data: session } = useSession();
   const [contentState, setContentState] = useState({ value: null });
-  const handleChange = (value) => {
+  const [length, setLength] = useState(0);
+  function handleChange(value, delta, source, editor) {
+    let length = editor.getLength() - 1;
+    console.log(length);
+    console.log(value);
+    setLength(length);
     setContentState({ value });
+  }
+  const checkCharacterCount = (event) => {
+    if (length >= MAX_LENGTH && event.key !== "Backspace")
+      event.preventDefault();
   };
 
   const handleSave = async (event) => {
@@ -52,8 +61,15 @@ const EditorSpace = () => {
         theme="snow"
         value={contentState.value}
         onChange={handleChange}
+        onKeyDown={checkCharacterCount}
         placeholder={"Write something awesome..."}
       />
+      <p className="text-sm mt-2">Character Count {length}</p>
+      {length > MAX_LENGTH - 1 && (
+        <p className="text-red-500 text-sm mt-2">
+          Error: Character count cannot exceed 10.
+        </p>
+      )}
       <button
         className="mt-4 px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-sm text-sm"
         onClick={handleSave}
