@@ -1,6 +1,6 @@
 export const Modules = {
   toolbar: {
-    container: "#Toolbar",
+    container: "#Toolbar_Right",
   },
   clipboard: {
     // toggle to add extra line breaks when pasting HTML:
@@ -9,7 +9,7 @@ export const Modules = {
 };
 
 export const QuillToolbar = () => (
-  <div id="Toolbar">
+  <div id="Toolbar_Right">
     <span className="ql-formats">
       <button className="ql-header" value="1" />
       <button className="ql-header" value="2" />
