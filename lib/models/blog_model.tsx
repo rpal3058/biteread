@@ -11,10 +11,20 @@ const blogSchema = new Schema({
     required: true,
     unique: false,
   },
-  blog: {
+  header: {
     type: String,
     required: true,
     unique: true,
+  },
+  blogLeft: {
+    type: String,
+    required: true,
+    unique: false,
+  },
+  blogRight: {
+    type: String,
+    required: false,
+    unique: false,
   },
   createdAt: { type: Date, default: Date.now },
 });

@@ -32,7 +32,8 @@
     "components/editor/customEditor.js",
     "components/editor/customEditor.js",
     "pages/api/auth/signup.js",
-    "pages/blogs/[id]"
+    "pages/blogs/[id]",
+    "pages/create/index.js"
   ],
   "exclude": ["node_modules"]
 }

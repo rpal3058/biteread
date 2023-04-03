@@ -7,12 +7,16 @@ export default async function handler(req, res) {
   }
   await dbConnect();
   const data = req.body;
-  const { blogId, username, blog } = data;
+  const { blogId, username, header, blogLeft, blogRight } = data;
+  console.log(blogLeft);
+  console.log(blogRight);
   try {
     const newBlog = new Blog({
       blogId: blogId,
       username: username,
-      blog: blog,
+      header: header,
+      blogLeft: blogLeft,
+      blogRight: blogRight,
     });
     await newBlog.save();
     return res.status(201).json({ message: "Blog Added!" });
